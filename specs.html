@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specs - Banana Phone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Specific page styles */
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            padding-top: 80px;
+        }
+
+        .specs-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .specs-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .specs-header h1 {
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 4rem;
+        }
+
+        .spec-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .spec-label {
+            font-weight: bold;
+            color: var(--text-muted);
+            width: 40%;
+        }
+
+        .spec-value {
+            font-size: 1.1rem;
+        }
+
+        .story-section {
+            background: #141414;
+            padding: 4rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .story-section h2 {
+            color: var(--primary-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-yellow);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .back-link:hover {
+            border-color: var(--primary-yellow);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="logo">BANANA</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="specs.html" style="color:var(--primary-yellow)">Specs & Story</a></li>
+            <li><a href="index.html#order" class="btn-primary">Pre-Order</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="specs-container">
+        <header class="specs-header">
+            <h1 class="fade-in">Inside the Peel</h1>
+            <p class="fade-in delay-1">Every detail crafted for the human experience.</p>
+        </header>
+
+        <table class="spec-table fade-in delay-2">
+            <tr>
+                <td class="spec-label">Processor</td>
+                <td class="spec-value">Banana B1 Bionic (3nm, Octa-core up to 3.4GHz)</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Display</td>
+                <td class="spec-value">6.8" YellowOLED LTPO (1-144Hz), 3000 nits Peak</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Main Camera</td>
+                <td class="spec-value">1-inch Type Sensor, 100MP, f/1.6, OIS, ZEISS T* Coating</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Telephoto</td>
+                <td class="spec-value">64MP Periscope Zoom (4.3x Optical, 100x Digital)</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Battery</td>
+                <td class="spec-value">5400mAh, 120W FlashCharge</td>
+            </tr>
+            <tr>
+                <td class="spec-label">OS</td>
+                <td class="spec-value">PeelOS 14 (Based on Android)</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Build</td>
+                <td class="spec-value">Titanium Frame, Ceramic Glass Back</td>
+            </tr>
+        </table>
+
+        <div class="story-section fade-in delay-2">
+            <h2>The Banana Story</h2>
+            <p>
+                It started with a simple idea: technology should feel organic. In a world of cold metal and glass,
+                Banana strives to bring warmth back to your palm. Inspired by nature's perfect ergonomic fruit, we
+                designed the Banana phone to curve perfectly into your hand.
+                <br><br>
+                Our "Skin Cool" technology uses bio-mimetic materials to dissipate heat, just like human skin. And our
+                cameras don't just capture light; they capture feeling. Welcome to the future. Welcome to Banana.
+            </p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">BANANA</div>
+                <p>&copy; 2026 Banana Tech. Designed for Humans.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple fade-in script for this page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', () => {
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '70px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = 'rgba(10, 10, 10, 0.95)';
+                    navLinks.style.padding = '2rem';
+                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.5)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

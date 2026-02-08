@@ -1,0 +1,741 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-dark: #050505;
+    /* Deep Black */
+    --primary-gold: #D4AF37;
+    --accent-red: #D32F2F;
+    /* Premium Red */
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+    --glow-red: 0 0 20px rgba(211, 47, 47, 0.4);
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+/* Utilities */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+.text-gold {
+    color: var(--primary-gold);
+}
+
+.text-red {
+    color: var(--accent-red);
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+/* Styled Nav Buttons */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a:hover {
+    background: var(--primary-gold);
+    color: #000;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Order Button Special Style override if needed, or keep uniform */
+.btn-nav-order {
+    background: var(--accent-red) !important;
+    border-color: var(--accent-red) !important;
+    color: #fff !important;
+}
+
+.btn-nav-order:hover {
+    background: #e53935 !important;
+    box-shadow: var(--glow-red) !important;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 8% 50px;
+    position: relative;
+    background: radial-gradient(circle at 70% 40%, #1a1005 0%, #050505 60%);
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 2;
+    text-align: center;
+    /* Centered Text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center Items */
+}
+
+.hero-content img.logo-icon,
+.hero-content svg.logo-icon {
+    width: 60px;
+    margin: 0 auto 1rem;
+    /* Center Logo */
+    filter: drop-shadow(0 0 10px var(--primary-gold));
+}
+
+/* Camera Section */
+#camera {
+    padding: 8rem 5%;
+    background: #000;
+    overflow: hidden;
+}
+
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.camera-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-left: 4px solid var(--primary-gold);
+    padding-left: 20px;
+}
+
+.camera-desc {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 450px;
+    line-height: 1.8;
+}
+
+.small-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    background: transparent;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.small-btn:hover {
+    background: var(--primary-gold);
+    color: #000;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.btn-cta {
+    padding: 1rem 3rem;
+    background: var(--accent-red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.4);
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(211, 47, 47, 0.6);
+    background: #e53935;
+}
+
+/* 3D Phone Container used in Hero */
+.hero-visual {
+    width: 45%;
+    height: 80vh;
+    position: relative;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Reusing 3D Phone Styles with Gold/Black adjustments */
+.phone-scene {
+    width: 300px;
+    height: 600px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg) rotateX(10deg);
+    transition: transform 0.1s ease-out;
+    /* Smooth follow for parallax */
+}
+
+/* 3D Styles from previous step, but updated colors */
+.phone-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 35px;
+}
+
+.face.front {
+    width: 300px;
+    height: 600px;
+    background: #000;
+    transform: translateZ(15px);
+    border: 2px solid #222;
+    overflow: hidden;
+}
+
+.face.back {
+    width: 300px;
+    height: 600px;
+    background: #111;
+    /* Default Black */
+    transform: rotateY(180deg) translateZ(15px);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Sides */
+.face.right,
+.face.left {
+    width: 30px;
+    height: 600px;
+    background: linear-gradient(to right, #b8860b, #d4af37, #b8860b);
+    /* Gold Frame */
+    left: 135px;
+    transform-style: preserve-3d;
+    /* Enable children (buttons) to protrude */
+}
+
+.face.right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.face.left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+/* Physical Buttons */
+.btn-phys {
+    position: absolute;
+    background: linear-gradient(to right, #b8860b, #ffe135, #b8860b);
+    transform: translateZ(2px);
+    /* Protrude slightly */
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    left: 8px;
+    /* Centered on the 30px thick side (30-4)/2 roughly, actually button thickness matters */
+    /* Button width should be thickness of protrusion? No, width is on the face surface */
+    width: 6px;
+    /* Wait, the face is 30px wide. The button sits ON it. */
+    left: 12px;
+    /* Center horizontally on the 30px strip */
+}
+
+/* Power Button on Right Face */
+.power-btn {
+    top: 180px;
+    height: 60px;
+    width: 6px;
+    /* To make it protrude FROM the right face (which is facing Right), we need to translateZ positive? 
+       The Right Face has Z going OUT from the center? No.
+       The Right Face is rotated 90deg. Its Z axis points to the RIGHT of the screen.
+       So translateZ(150px) puts it at the edge. 
+       Content inside sits on the surface. translateZ(positive) moves it further Right (Protruding).
+       Correct.
+    */
+    transform: translateZ(0.5px);
+    background: #eebb44;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Volume Button on Left Face */
+.volume-btn {
+    top: 150px;
+    height: 100px;
+    width: 6px;
+    transform: translateZ(0.5px);
+    background: #eebb44;
+    box-shadow: -1px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Make buttons pop out more by using a pseudo element for thickness? 
+   Simple flat div on the surface is okay for now, but 3D protrusion is better.
+   Let's just use simple shading for now.
+*/
+.btn-phys {
+    width: 4px;
+    left: 13px;
+    /* Center */
+    background: #fff;
+    /* Highlight */
+    border: 1px solid #997700;
+}
+
+.face.top,
+.face.bottom {
+    width: 300px;
+    height: 30px;
+    background: linear-gradient(to bottom, #b8860b, #d4af37);
+    top: 285px;
+}
+
+.face.top {
+    transform: rotateX(90deg) translateZ(300px);
+}
+
+.face.bottom {
+    transform: rotateX(-90deg) translateZ(300px);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #050505, #151515);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.banana-logo-screen {
+    width: 100px;
+    color: var(--primary-gold);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+/* Vivo X100 Camera Style - Reused & Tweaked */
+.camera-island {
+    width: 220px;
+    height: 220px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border: 4px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.lens {
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, #222, #000);
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.main-lens {
+    width: 80px;
+    height: 80px;
+    top: 25%;
+    left: 25%;
+}
+
+.ultra-wide {
+    width: 50px;
+    height: 50px;
+    top: 25%;
+    right: 20%;
+}
+
+.telephoto {
+    width: 50px;
+    height: 50px;
+    bottom: 25%;
+    left: 40%;
+}
+
+.flash {
+    width: 20px;
+    height: 10px;
+    background: #fff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20%;
+    right: 25%;
+    box-shadow: 0 0 10px #fff;
+}
+
+.zeiss-logo {
+    position: absolute;
+    bottom: 15%;
+    color: #0082CA;
+    font-size: 10px;
+    font-weight: bold;
+    background: #fff;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.brand-text {
+    margin-top: 150px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scale(-1, 1);
+}
+
+
+/* Features Section */
+#features {
+    padding: 100px 5%;
+    background: var(--bg-dark);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-gold);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+/* Specs Section */
+#specs {
+    padding: 100px 5%;
+    background: #080808;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--primary-gold);
+    font-weight: 700;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    /* For border effect */
+    background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spec-column {
+    background: var(--bg-dark);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: background 0.3s;
+    border: 1px solid transparent;
+}
+
+.spec-column:hover {
+    background: #0a0a0a;
+    border: 1px solid var(--primary-gold);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.spec-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.spec-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Price Section */
+#price {
+    padding: 100px 5%;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a0505 0%, #050505 70%);
+}
+
+.price-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.limited-tag {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background: var(--accent-red);
+    color: #fff;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.price-old {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.price-new {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--accent-red);
+    text-shadow: 0 0 30px rgba(211, 47, 47, 0.3);
+    line-height: 1;
+    margin: 1rem 0 2rem;
+}
+
+.shipping-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+    letter-spacing: 1px;
+}
+
+/* Reviews Section */
+#reviews {
+    padding: 100px 5%;
+    background: var(--bg-dark);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-card {
+    padding: 2rem;
+    border-left: 2px solid var(--primary-gold);
+}
+
+.stars {
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.review-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+.review-author {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    padding: 4rem 5%;
+    background: #000;
+    border-top: 1px solid #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-socials a {
+    color: var(--primary-gold);
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #fff;
+}
+
+/* Mobile */
+.menu-toggle {
+    display: none;
+}
+
+/* Simplified for now */
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: var(--primary-gold);
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .hero-visual {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .feature-grid,
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-new {
+        font-size: 4rem;
+    }
+}
+
+/* Animations using AOS classes logic (or custom) */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
